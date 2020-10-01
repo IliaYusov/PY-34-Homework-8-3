@@ -1,8 +1,6 @@
 import os
 
-dirs = os.listdir(os.getcwd())
-dirs.remove(os.path.basename(__file__))
-if 'joined.txt' in dirs: dirs.remove('joined.txt')
+dirs = [file for file in os.listdir(os.getcwd()) if file.endswith('.txt') and file != 'joined.txt']
 
 joined = []
 
